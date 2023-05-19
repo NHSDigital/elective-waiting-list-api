@@ -1,0 +1,8 @@
+variables:
+  - group: status-endpoint
+  - name: service_name
+    value: elective-waiting-list
+  - name: short_service_name
+    value: elective-waiting-list
+  - name: service_base_path
+    value: elective-waiting-list
