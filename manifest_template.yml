@@ -4,8 +4,13 @@ DESCRIPTION: example description
 APIGEE_ENVIRONMENTS:
   - name: internal-dev
     display_name: Internal Development
+    has_mock_auth: true
   - name: internal-qa
     display_name: Internal QA
+    has_mock_auth: true 
+  - name: ref
+    display_name: Reference
+    has_mock_auth: true
   - name: int
     display_name: Integration Testing
   - name: prod
@@ -54,34 +59,29 @@ apigee:
               {{ NAME }}:
                 quota:
                   enabled: true
-                  limit: 1500
+                  limit: 300
                   interval: 1
                   timeunit: minute
                 spikeArrest:
                   enabled: true
-                  ratelimit: 3000pm
+                  ratelimit: 600pm # 10 requests per second
               app:
                 quota:
                   enabled: false
-                  limit: 1500
-                  interval: 1
-                  timeunit: minute
                 spikeArrest:
                   enabled: false
-                  ratelimit: 3000pm
         description: {{ DESCRIPTION }}
         displayName: {{ TITLE }}
         environments: [ {{ ENV.name }} ]
         proxies:
           - {{ NAME }}
           - identity-service-{{ ENV.name }}
-{% if ENV.name == 'int' %}
-          - identity-service-{{ ENV.name }}-no-smartcard
+{% if ENV.has_mock_auth | default(false) %}
+          - identity-service-mock-{{ ENV.name }}
 {% endif %}
-         scopes:
+        scopes:
           - 'urn:nhsd:apim:app:level3:{{ SERVICE_NAME }}'
           - 'urn:nhsd:apim:user-nhs-cis2:aal3:{{ SERVICE_NAME }}'
-          - 'urn:nhsd:apim:user-nhs-login:P9:{{ SERVICE_NAME }}'
     specs:
       - name: {{ NAME }}
         path: {{ SERVICE_NAME }}.json
