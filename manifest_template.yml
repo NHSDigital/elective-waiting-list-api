@@ -59,12 +59,12 @@ apigee:
               {{ NAME }}:
                 quota:
                   enabled: true
-                  limit: 300
+                  limit: 1500
                   interval: 1
                   timeunit: minute
                 spikeArrest:
                   enabled: true
-                  ratelimit: 600pm # 10 requests per second
+                  ratelimit: 3000pm 
               app:
                 quota:
                   enabled: false
