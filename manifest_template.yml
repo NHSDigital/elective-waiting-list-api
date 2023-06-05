@@ -84,7 +84,7 @@ apigee:
           - 'urn:nhsd:apim:user-nhs-cis2:aal3:{{ SERVICE_NAME }}'
           - 'urn:nhsd:apim:user-nhs-login:P9:{{ SERVICE_NAME }}'
 
-    specs:''
+    specs:
       - name: {{ NAME }}
         path: {{ SERVICE_NAME }}.json
     api_catalog:
