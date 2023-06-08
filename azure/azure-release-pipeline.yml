@@ -62,11 +62,11 @@ extends:
     # # Enable int environment when ready by uncommenting:
       - environment: int
         depends_on:
-          - internal_qa
+           - internal_qa
     #       - internal_qa_sandbox
         post_deploy:
-          - template: ./templates/run-tests.yml
-            parameters:
-              full: true
-              test_command: prod
-              smoketest_command: prod
+           - template: ./templates/run-tests.yml
+             parameters:
+               full: true
+               test-command: prod
+               smoketest-command: prod
