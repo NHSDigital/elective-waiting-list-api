@@ -29,4 +29,3 @@
       </LoadBalancer>
     </HTTPTargetConnection>
 </TargetEndpoint>
-<!-- End -->
