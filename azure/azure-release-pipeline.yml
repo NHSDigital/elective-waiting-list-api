@@ -63,7 +63,3 @@ extends:
       - environment: int
         depends_on:
           - internal_dev
-        post_deploy:
-          - template: ./templates/run-tests.yml
-            parameters:
-              full: true
