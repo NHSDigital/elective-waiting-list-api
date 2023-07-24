@@ -2,40 +2,216 @@
 # for elective-waiting-list owned by NHS Digital (https://digital.nhs.uk/)
 openapi: '3.0.0'
 info:
-  title: 'elective-waiting-list'
+  title: "Elective Waiting List (Producer) – REST API"
   version: 'Computed and injected at build time by `scripts/set_version.py`'
   description: |
-    ## Overview
-    Add a fully fledged description here with markdown syntax.
-    For help completing the content of your API spec, see our guidance on the minimum standard (bronze) details 
-    to include [here](https://nhsd-confluence.digital.nhs.uk/display/APM/Writing+a+bronze+API+cover+page). You should also base your content on our exemplar API - [PDS FHIR](https://digital.nhs.uk/developer/api-catalogue/personal-demographics-service-fhir).
-    ## Who can use this API
-    To be completed.
-    ## Related APIs
-    To be completed.
-    ## API status and roadmap
-    To be completed.
-    ## Service level
-    To be completed.
-    ## Technology
-    To be completed.
+    
+    <div class="nhsd-m-emphasis-box nhsd-m-emphasis-box--emphasis nhsd-!t-margin-bottom-6" aria-label="Highlighted Information">
+        <div class="nhsd-a-box nhsd-a-box--border-blue">
+            <div class="nhsd-m-emphasis-box__image-box">
+                <figure class="nhsd-a-image">
+                    <picture class="nhsd-a-image__picture">
+                        <img src="http://digital.nhs.uk/binaries/content/gallery/icons/info.svg?colour=231f20" alt="" style="object-fit:fill">
+                    </picture>
+                </figure>
+            </div>
+            <div class="nhsd-m-emphasis-box__content-box">
+                <div data-uipath="website.contentblock.emphasis.content" class="nhsd-t-word-break"><p class="nhsd-t-body">This API is <a href="https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#statuses">in beta but internal</a>, meaning the API is not currently available for integration by external third parties. If you want to use it, <a href="https://digital.nhs.uk/developer/help-and-support">contact us</a> and we'll look at making it available.</p></div>            
+            </div>
+        </div>
+    </div>
+    
+    ## Overview 
+
+    Use this API to access the Waiting List Minimum Data Set (WLMDS) – The national electronic database of NHS patient waiting list details such as date of birth, a patient's care pathway and date they began waiting.
+
+    You can:    
+    -  Search for patients
+    -   Get patient details
+    -   View when a patient began waiting for a procedure
+    -   View the care pathway a patient is on
+    -   View the trust/organisation their care pathway is with
+
+    You can view:
+    -   Patient Waiting Date
+    -   Patient Pathway Identifier
+    -   Treatment Function Code
+    -   Organisation Providing the Care Pathway
+    -   Census Date
+
+
+    ## Who can use this API 
+
+    ## API status 
+    This API is [in development, alpha](https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#statuses).
+    
+    If you would like to be involved in our beta programme or have any other queries, [contact us](insert email here).
+    
+    To see our roadmap, or to suggest, comment or vote on features for this API, see our [interactive product backlog](insert link to product backlog here). 
+
+    ## Service level 
+    This API is a Silver+ service, meaning it is operational 24 x 7 x 365.
+
+    For more details, see [service levels](https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#service-levels). 
+
+    ## Technology 
+    This API is a Rest API.
+    
+    For more details, see [Basic REST](http://digital.nhs.uk/developer/guides-and-documentation/api-technologies-at-nhs-digital#basic-rest).
+
     ## Network access
-    To be completed.
-    ## Security and authorisation
-    To be completed.
-    ## Environments and testing
-    To be completed.
-    ## Onboarding
-    To be completed.
+    This API is available on the internet and, indirectly, on the Health and Social Care Network ([HSCN](https://digital.nhs.uk/services/health-and-social-care-network)). 
+
+    For more details see [Network access for APIs](https://digital.nhs.uk/developer/guides-and-documentation/network-access-for-apis). 
+
+    ## Security and authorisation 
+    ### Application-restricted access
+    
+    This access mode is [application-restricted](https://digital.nhs.uk/developer/guides-and-documentation/security-and-authorisation#application-restricted-apis), meaning we authenticate the calling application but not the end user.
+    
+    The end user could be:
+    
+      -  a patient - in which case you must ensure they are authenticated locally
+    
+      -  not present at all - for example as part of a back end process to check waiting lists for an NHS number
+      
+    To use [application-restricted](https://digital.nhs.uk/developer/guides-and-documentation/security-and-authorisation#application-restricted-apis) mode, use the following security pattern:
+    
+      -  [Application-restricted RESTful API - signed JWT authentication](https://digital.nhs.uk/developer/guides-and-documentation/security-and-authorisation/application-restricted-restful-apis-signed-jwt-authentication)
+
+    ## Environments and testing 
+
+    | Environment                         | Base URL                                                               |
+    | ------------------------------------| ---------------------------------------------------------------------- |
+    | Dev                                 | `https://internal-dev.api.service.nhs.uk/elective-waiting-list`        |
+    | Integration                         | `https://int.api.service.nhs.uk/elective-waiting-list`                 |
+    | Production                          | `https://api.service.nhs.uk/elective-waiting-list`                     |
+    
+    ### Dev Testing
+    
+    Our [dev environment](https://digital.nhs.uk/developer/guides-and-documentation/testing#sandbox-testing):
+    
+    -  is for developer testing
+    
+    ### Integration Testing
+    
+    Our [integration test environment](https://digital.nhs.uk/developer/guides-and-documentation/testing#integration-testing):
+    
+    -  is for integration testing
+
+    For more details, see [integration testing with our RESTful APIs](https://digital.nhs.uk/developer/guides-and-documentation/testing#integration-testing-with-our-restful-apis).
+
+    ## Onboarding 
+    You must get your software [onboarded](https://digital.nhs.uk/developer/guides-and-documentation/onboarding-process) before it can go live.
+    
+    To onboard for this API, follow the [Supplier Conformance Assessment List (SCAL) process](https://digital.nhs.uk/developer/guides-and-documentation/onboarding-process#onboard-using-the-supplier-conformance-assessment-list-scal-process) after contacting us at [email]()(update email)
+    
+    ## Errors
+    We use standard HTTP status codes to show whether an API request succeeded or not. They are usually in the range:
+
+    * 200 to 299 if it succeeded
+    * 400 to 499 if it failed because of a client error by your application
+    * 500 to 599 if it failed because of an error on our server
+    
+    Errors specific to each API are shown in the Endpoints section, under Response. See our [reference guide](https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#http-status-codes) for more on errors.
+    
+
   contact:
-    name: 'elective-waiting-list API Support'
+    name: 'Elective Waiting List API Support'
     url: 'https://digital.nhs.uk/developer/help-and-support'
     email: api.management@nhs.net
+
+  servers:
+    - url: 'https://sandbox.api.service.nhs.uk/elective-waiting-list'
+      description: Sandbox environment.
+    - url: 'https://int.api.service.nhs.uk/elective-waiting-list'
+      description: Integration test environment.
+    - url: 'https://api.service.nhs.uk/elective-waiting-list'
+      description: Production environment.
+  paths: {}
+
+x-spec-publication:
+  try-this-api:
+    disabled: true
 servers:
-  - url: 'https://sandbox.api.service.nhs.uk/elective-waiting-list'
-    description: Sandbox environment.
+  - url: 'https://internal-dev.api.service.nhs.uk/elective-waiting-list'
+    description: Dev environment.
   - url: 'https://int.api.service.nhs.uk/elective-waiting-list'
-    description: Integration test environment.
+    description: Integration environment.
   - url: 'https://api.service.nhs.uk/elective-waiting-list'
     description: Production environment.
-paths: {}
+paths:
+  /elective-waiting-list/{patient.identifier}:
+    get:
+      summary: "Get waiting lists by patient identifier"
+      operationId: waiting-lists
+      description: |
+        ## Overview
+        Use this endpoint to get a list of waiting lists for a provided patient identifier.
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          description: Bearer token/API Key allocated by us
+          schema:
+            type: string
+            example: Bearer 6b882ddf-82f5-4611-9390-71ca6a045a60
+        - name: patient.identifier
+          in: path
+          description: id of patient
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: string
+                    enum: 
+                      - success
+              example:
+                PATIENT_PATHWAY_IDENTIFIER: EBY23435667509,
+                ACTIVITY_TREATMENT_FUNCTION_CODE: 314,
+                REFERRAL_TO_TREATMENT_PERIOD_START_DATE: 2020-04-04T00:00:00,
+                ReportingOrganisation: RXE,
+                derWeekEnding: 2023-03-05T00:00:00
+        '4XX':
+          description: |
+            An error occurred as follows:
+
+            | HTTP status | Error code                 | Description |
+            | ----------- | -------------------------- | --------------------------------------------- |
+            | 400         | `error.bad-request`        | The request is invalid                        |
+            | 401         | `error.unauthorized`       | Invalid token provided                        |
+            | 403         | `error.forbidden`          | Access to the requested resource is forbidden |
+            
+          
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: string
+                    enum:
+                      - "error.bad-request"
+                      - 'error.unauthorized'
+                  data:
+                    type: string
+                    example: 'clientId mismatch'
+              example:
+                status: 400,
+                message: bad request,
+                error: The request is invalid
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
