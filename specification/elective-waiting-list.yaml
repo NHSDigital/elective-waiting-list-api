@@ -121,15 +121,6 @@ info:
     url: 'https://digital.nhs.uk/developer/help-and-support'
     email: api.management@nhs.net
 
-  servers:
-    - url: 'https://sandbox.api.service.nhs.uk/elective-waiting-list'
-      description: Sandbox environment.
-    - url: 'https://int.api.service.nhs.uk/elective-waiting-list'
-      description: Integration test environment.
-    - url: 'https://api.service.nhs.uk/elective-waiting-list'
-      description: Production environment.
-  paths: {}
-
 x-spec-publication:
   try-this-api:
     disabled: true
