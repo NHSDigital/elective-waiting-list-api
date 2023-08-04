@@ -23,41 +23,39 @@ info:
     
     ## Overview 
 
-    Use this API to access the Waiting List Minimum Data Set (WLMDS) – The national electronic database of NHS patient waiting list details such as date of birth, a patient's care pathway and date they began waiting.
+    Use this API to access the Waiting List Minimum Data Set (WLMDS) – The national electronic database of NHS patient waiting list details such as date of birth, a patient's care pathway and the date they began waiting.
 
     You can:    
     -  Search for patients
-    -   Get patient details
-    -   View when a patient began waiting for a procedure
-    -   View the care pathway a patient is on
-    -   View the trust/organisation their care pathway is with
+    -   get patient details
+    -   view when a patient began waiting for a procedure
+    -   view the care pathway a patient is on
+    -   view the trust/organisation their care pathway is with
 
     You can view:
-    -   Patient Waiting Date
-    -   Patient Pathway Identifier
-    -   Treatment Function Code
-    -   Organisation Providing the Care Pathway
-    -   Census Date
+    -   patient waiting date
+    -   patient pathway identifier
+    -   treatment function code
+    -   organisation providing the care pathway
+    -   census date
 
 
     ## Who can use this API 
 
-    ## API status 
+    ## API status and roadmap 
     This API is [in development, alpha](https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#statuses).
     
-    If you would like to be involved in our beta programme or have any other queries, [contact us](insert email here).
+    If you would like to be involved in our beta programme or have any other queries, [contact us](https://digital.nhs.uk/developer/help-and-support).
     
-    To see our roadmap, or to suggest, comment or vote on features for this API, see our [interactive product backlog](insert link to product backlog here). 
+    To see our roadmap, or to suggest, comment or vote on features for this API, see our [interactive product backlog](https://nhs-digital-api-management.featureupvote.com/suggestions/444642/nhs-app-api-elective-waiting-list). 
 
     ## Service level 
-    This API is a Silver+ service, meaning it is operational 24 x 7 x 365.
+    This API is a silver plus service, meaning it is operational 24 hours a day, 365 days a year.
 
     For more details, see [service levels](https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#service-levels). 
 
     ## Technology 
-    This API is a Rest API.
-    
-    For more details, see [Basic REST](http://digital.nhs.uk/developer/guides-and-documentation/api-technologies-at-nhs-digital#basic-rest).
+    This API is a [REST API](http://digital.nhs.uk/developer/guides-and-documentation/api-technologies-at-nhs-digital#basic-rest).
 
     ## Network access
     This API is available on the internet and, indirectly, on the Health and Social Care Network ([HSCN](https://digital.nhs.uk/services/health-and-social-care-network)). 
@@ -65,8 +63,7 @@ info:
     For more details see [Network access for APIs](https://digital.nhs.uk/developer/guides-and-documentation/network-access-for-apis). 
 
     ## Security and authorisation 
-    ### Application-restricted access
-    
+     
     This access mode is [application-restricted](https://digital.nhs.uk/developer/guides-and-documentation/security-and-authorisation#application-restricted-apis), meaning we authenticate the calling application but not the end user.
     
     The end user could be:
@@ -87,13 +84,13 @@ info:
     | Integration                         | `https://int.api.service.nhs.uk/elective-waiting-list`                 |
     | Production                          | `https://api.service.nhs.uk/elective-waiting-list`                     |
     
-    ### Dev Testing
+    ### Dev testing
     
     Our [dev environment](https://digital.nhs.uk/developer/guides-and-documentation/testing#sandbox-testing):
     
     -  is for developer testing
     
-    ### Integration Testing
+    ### Integration testing
     
     Our [integration test environment](https://digital.nhs.uk/developer/guides-and-documentation/testing#integration-testing):
     
@@ -102,7 +99,7 @@ info:
     For more details, see [integration testing with our RESTful APIs](https://digital.nhs.uk/developer/guides-and-documentation/testing#integration-testing-with-our-restful-apis).
 
     ## Onboarding 
-    You must get your software [onboarded](https://digital.nhs.uk/developer/guides-and-documentation/onboarding-process) before it can go live.
+    You must get your software [onboarded](https://digital.nhs.uk/developer/guides-and-documentation/onboarding-process) before it can go live. The onboarding process can sometimes be quite long, so it’s worth planning well ahead.
     
     To onboard for this API, follow the [Supplier Conformance Assessment List (SCAL) process](https://digital.nhs.uk/developer/guides-and-documentation/onboarding-process#onboard-using-the-supplier-conformance-assessment-list-scal-process) after contacting us at [email]()(update email)
     
