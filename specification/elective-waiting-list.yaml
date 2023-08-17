@@ -41,7 +41,10 @@ info:
 
 
     ## Who can use this API 
+    Currently, this API is for internal use only - the only API consumer is the NHS App.
 
+    If you are interested in using this API in another context, [contact us](https://digital.nhs.uk/developer/help-and-support).
+    
     ## API status 
     This API is [in development, alpha](https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#statuses).
     
@@ -79,10 +82,21 @@ info:
     
       -  [Application-restricted RESTful API - signed JWT authentication](https://digital.nhs.uk/developer/guides-and-documentation/security-and-authorisation/application-restricted-restful-apis-signed-jwt-authentication)
 
+    ## Errors
+    We use standard HTTP status codes to show whether an API request succeeded or not. They are usually in the range:
+
+    * 200 to 299 if it succeeded
+    * 400 to 499 if it failed because of a client error by your application
+    * 500 to 599 if it failed because of an error on our server
+    
+    Errors specific to each API are shown in the Endpoints section, under Response. See our [reference guide](https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#http-status-codes) for more on errors.
+    
+    
     ## Environments and testing 
 
     | Environment                         | Base URL                                                               |
     | ------------------------------------| ---------------------------------------------------------------------- |
+    | Sanbox                              | Not available                                                          |
     | Dev                                 | `https://internal-dev.api.service.nhs.uk/elective-waiting-list`        |
     | Integration                         | `https://int.api.service.nhs.uk/elective-waiting-list`                 |
     | Production                          | `https://api.service.nhs.uk/elective-waiting-list`                     |
@@ -104,16 +118,8 @@ info:
     ## Onboarding 
     You must get your software [onboarded](https://digital.nhs.uk/developer/guides-and-documentation/onboarding-process) before it can go live.
     
-    To onboard for this API, follow the [Supplier Conformance Assessment List (SCAL) process](https://digital.nhs.uk/developer/guides-and-documentation/onboarding-process#onboard-using-the-supplier-conformance-assessment-list-scal-process) after contacting us at [email]()(update email)
+    To onboard for this API, follow the [Supplier Conformance Assessment List (SCAL) process](https://digital.nhs.uk/developer/guides-and-documentation/onboarding-process#onboard-using-the-supplier-conformance-assessment-list-scal-process) after contacting us at [necsu.wayfinder@nhs.net](necsu.wayfinder@nhs.net).
     
-    ## Errors
-    We use standard HTTP status codes to show whether an API request succeeded or not. They are usually in the range:
-
-    * 200 to 299 if it succeeded
-    * 400 to 499 if it failed because of a client error by your application
-    * 500 to 599 if it failed because of an error on our server
-    
-    Errors specific to each API are shown in the Endpoints section, under Response. See our [reference guide](https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#http-status-codes) for more on errors.
     
 
   contact:
@@ -138,7 +144,9 @@ paths:
       operationId: waiting-lists
       description: |
         ## Overview
-        Use this endpoint to get a list of waiting lists for a provided patient identifier.
+        Use this endpoint to get a list of waiting lists for a provided patient identifier. Patient ID is NHS number of the patient. An example call is:
+        
+        `https://api.service.nhs.uk/elective-waiting-list/patient?patient.identifier=https://fhir.nhs.uk/Id/nhs-number|1234567890`
       security:
         - bearerAuth: []
       parameters:
