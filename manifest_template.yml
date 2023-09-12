@@ -5,12 +5,6 @@ APIGEE_ENVIRONMENTS:
   - name: internal-dev
     display_name: Internal Development
     has_mock_auth: true
-  - name: internal-qa
-    display_name: Internal QA
-    has_mock_auth: true 
-  - name: ref
-    display_name: Reference
-    has_mock_auth: true
   - name: int
     display_name: Integration Testing
   - name: prod
@@ -69,7 +63,6 @@ apigee:
 {% endif %}
         scopes:
           - 'urn:nhsd:apim:app:level3:{{ SERVICE_NAME }}'
-          - 'urn:nhsd:apim:user-nhs-cis2:aal3:{{ SERVICE_NAME }}'
           - 'urn:nhsd:apim:user-nhs-login:P9:{{ SERVICE_NAME }}'
 
     specs:
