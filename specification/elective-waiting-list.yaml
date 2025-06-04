@@ -16,7 +16,7 @@ info:
                 </figure>
             </div>
             <div class="nhsd-m-emphasis-box__content-box">
-                <div data-uipath="website.contentblock.emphasis.content" class="nhsd-t-word-break"><p class="nhsd-t-body">This API is <a href="https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#statuses">in production but internal</a>, meaning the API is not currently available for integration by external third parties. If you want to use it, <a href="https://digital.nhs.uk/developer/help-and-support">contact us</a> and we'll look at making it available.</p></div>            
+                <div data-uipath="website.contentblock.emphasis.content" class="nhsd-t-word-break"><p class="nhsd-t-body">This API is <a href="https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#statuses">in production but internal</a>, meaning the API is not currently available for integration by external third parties.</p></div>            
             </div>
         </div>
     </div>
@@ -43,8 +43,6 @@ info:
     ## Who can use this API 
     Currently, this API is for internal use only - the only API consumer is the NHS App.
 
-    If you are interested in using this API in another context, [contact us](https://digital.nhs.uk/developer/help-and-support).
-    
     ## API status and roadmap
     This API is [in production](https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#statuses).
     
@@ -112,8 +110,6 @@ info:
 
     ## Onboarding 
     You must get your software [onboarded](https://digital.nhs.uk/developer/guides-and-documentation/onboarding-process) before it can go live. The onboarding process can sometimes be quite long, so it’s worth planning well ahead.
-    
-    To onboard for this API, follow the [Supplier Conformance Assessment List (SCAL) process](https://digital.nhs.uk/developer/guides-and-documentation/onboarding-process#onboard-using-the-supplier-conformance-assessment-list-scal-process) after contacting us at [necsu.wayfinder@nhs.net](necsu.wayfinder@nhs.net).
     
     
 
