@@ -47,8 +47,6 @@ info:
     
     ## API status and roadmap
     This API is [in production](https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#statuses).
-    
-    To see our roadmap, or to suggest, comment or vote on features for this API, see our [interactive product backlog](https://nhs-digital-api-management.featureupvote.com/suggestions/444642/nhs-app-api-elective-waiting-list). 
 
     ## Service level 
     This API is a silver plus service, meaning it is operational 24 hours a day, 365 days a year.
@@ -115,7 +113,8 @@ info:
     
     To onboard for this API, follow the [Supplier Conformance Assessment List (SCAL) process](https://digital.nhs.uk/developer/guides-and-documentation/onboarding-process#onboard-using-the-supplier-conformance-assessment-list-scal-process) after contacting us at [necsu.wayfinder@nhs.net](necsu.wayfinder@nhs.net).
     
-    
+    ## Contact us
+    For help and support connecting to our APIs and to join our developer community, see [Help and support building healthcare software](https://digital.nhs.uk/developer/help-and-support).
 
   contact:
     name: 'Elective Waiting List API Support'
