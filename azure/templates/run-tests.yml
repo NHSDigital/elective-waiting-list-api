@@ -10,11 +10,6 @@ parameters:
     default: 'make smoketest'
 
 steps:
-  - task: UsePythonVersion@0
-    displayName: Use Python 3.8 for pytests
-    inputs:
-      versionSpec: "3.8"
-
   - bash: |
       make install-python
     workingDirectory: $(Pipeline.Workspace)/s/$(SERVICE_NAME)/$(SERVICE_ARTIFACT_NAME)

@@ -2,7 +2,7 @@ SHELL=/bin/bash -euo pipefail
 
 #Installs dependencies using poetry.
 install-python:
-	poetry install --no-root
+	poetry install
 
 #Installs dependencies using npm.
 install-node:
